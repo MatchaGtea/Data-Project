@@ -91,14 +91,61 @@ void dijkstra(Graph* g, const char* startName, const char* endName) {
 }
 
 void bfs(Graph* g, const char* startName, const char* endName) {
-    // TODO (Member 2): BFS for unweighted shortest path (fewest hops)
-    // Steps:
-    // 1. Init visited[] and parent[] arrays
-    // 2. Enqueue startNode
-    // 3. While queue not empty:
-    //    a. Dequeue node u
-    //    b. If u == endNode -> printPath and return
-    //    c. For each edge of u -> enqueue unvisited neighbors
-    // 4. If queue empty and end not reached -> no path
-    std::cout << "TODO: BFS\n";
+    Node* startNode = findNode(g, startName);
+    Node* endNode = findNode(g, endName);
+    if (!startNode || !endNode) {
+        std::cout << "Location not found.\n";
+        return;
+    }
+
+    int n = g->nodeCount;
+    bool* visited = new bool[n];
+    int* parent = new int[n];
+    int* hops = new int[n];
+
+    for (int i = 0; i < n; i++) {
+        visited[i] = false;
+        parent[i] = -1;
+        hops[i] = INF;
+    }
+
+    Queue* q = createQueue();
+    visited[startNode->id] = true;
+    hops[startNode->id] = 0;
+    enqueue(q, startNode->id);
+
+    while (!isQueueEmpty(q)) {
+        int u = dequeue(q);
+        if (u == endNode->id) break;
+
+        Node* uNode = getNodeById(g, u);
+        if (!uNode) continue;
+
+        Edge* e = uNode->edges;
+        while (e) {
+            int v = e->dest;
+            if (!visited[v]) {
+                visited[v] = true;
+                parent[v] = u;
+                hops[v] = hops[u] + 1;
+                enqueue(q, v);
+            }
+            e = e->next;
+        }
+    }
+
+    std::cout << "\n=== Shortest Path (BFS) ===\n";
+    std::cout << "From: " << startName << "  To: " << endName << "\n";
+    if (!visited[endNode->id]) {
+        std::cout << "No path found.\n";
+    } else {
+        std::cout << "Path: ";
+        printPath(g, parent, startNode->id, endNode->id);
+        std::cout << "\nHops: " << hops[endNode->id] << "\n";
+    }
+
+    freeQueue(q);
+    delete[] visited;
+    delete[] parent;
+    delete[] hops;
 }

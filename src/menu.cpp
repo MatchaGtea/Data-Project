@@ -901,6 +901,7 @@ void showMenu(Graph* g, HashTable* ht) {
                   highlightPath, searchedNodeId, hovered);
         drawStatus(font, status, {390, 600, 700, 88});
 
+        drawText(font, "Commit: 5e914ce", 28, 654, 15, Color{92, 100, 112, 255});
         drawText(font, "Esc or window close exits.", 28, 676, 15, Color{92, 100, 112, 255});
         EndDrawing();
     }

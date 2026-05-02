@@ -11,9 +11,13 @@ UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
 	RAYLIB_LIBS += -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
 endif
+ifeq ($(UNAME_S),Windows_NT)
+	RAYLIB_LIBS += -lopengl32 -lgdi32 -lwinmm
+	EXE = .exe
+endif
 
 SRC = $(wildcard src/*.cpp src/data_structures/*.cpp)
-OUT = build/program
+OUT = build/program$(EXE)
 
 all: $(OUT)
 
