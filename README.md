@@ -25,7 +25,7 @@ Users can:
 - Click two map nodes to find the shortest path.
 - Type two locations into the Shortest Path panel.
 - Add/delete locations and connect paths from the GUI.
-- Zoom in/out on the campus map and pan with right-drag.
+- Zoom in/out on the campus map and pan by dragging the map image.
 
 ## Data Structures Used
 
@@ -61,6 +61,7 @@ approximate meters calculated from the map scale bar (`409 px = 100 m`).
 
 - Mouse wheel over map: zoom in/out
 - `+` / `-`: zoom in/out
+- Drag empty map image: pan
 - Right-drag on map: pan
 - Reset view: return to full campus view
 - Click two nodes: calculate shortest path
@@ -68,6 +69,8 @@ approximate meters calculated from the map scale bar (`409 px = 100 m`).
 - Up/Down in a textbox: change autocomplete selection
 
 ## How to Build & Run
+
+### macOS
 
 Install Raylib first:
 
@@ -88,6 +91,36 @@ Or manually:
 mkdir -p build
 g++ -Wall -std=c++17 -Isrc -o build/program src/*.cpp src/data_structures/*.cpp -lraylib
 ./build/program
+```
+
+### Windows
+
+Recommended setup: install [MSYS2](https://www.msys2.org/), then open the
+**MSYS2 UCRT64** terminal in this project folder.
+
+Install Raylib and the C++ build tools:
+
+```bash
+make install-raylib
+```
+
+If `make` is not installed yet, run this first in the MSYS2 UCRT64 terminal:
+
+```bash
+pacman -S --needed make
+```
+
+Build and run:
+
+```bash
+make
+make run
+```
+
+Or install Raylib manually without the Makefile target:
+
+```bash
+pacman -S --needed base-devel mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-raylib mingw-w64-ucrt-x86_64-pkgconf
 ```
 
 ## Project Structure

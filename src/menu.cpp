@@ -654,6 +654,7 @@ void showMenu(Graph* g, HashTable* ht) {
     std::string status = "Click two locations on the map to find the shortest path.";
     MapViewState mapView = defaultMapView(mapConfig);
     bool draggingMap = false;
+    int mapDragButton = MOUSE_RIGHT_BUTTON;
     Vector2 previousMouse{0, 0};
 
     while (!WindowShouldClose()) {
@@ -679,27 +680,39 @@ void showMenu(Graph* g, HashTable* ht) {
             zoomMapView(mapView, mapConfig, mapDest, {mapDest.x + mapDest.width / 2.0f,
                                                       mapDest.y + mapDest.height / 2.0f}, 1.0f / 1.25f);
         }
-        if (mouseInMap && IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) {
+
+        Rectangle source = sourceRectForView(mapConfig, mapView);
+        std::vector<NodeView> views = layoutNodes(g, mapDest, source);
+        Node* hovered = nodeAtMouse(views);
+
+        if (mouseInMap && IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && !hovered) {
             draggingMap = true;
+            mapDragButton = MOUSE_LEFT_BUTTON;
             previousMouse = mouse;
         }
-        if (draggingMap && IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
+        if (mouseInMap && IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) {
+            draggingMap = true;
+            mapDragButton = MOUSE_RIGHT_BUTTON;
+            previousMouse = mouse;
+        }
+        if (draggingMap && IsMouseButtonDown(mapDragButton)) {
             Vector2 delta{mouse.x - previousMouse.x, mouse.y - previousMouse.y};
             if (delta.x != 0.0f || delta.y != 0.0f) {
                 panMapView(mapView, mapConfig, mapDest, delta);
                 previousMouse = mouse;
             }
         }
-        if (IsMouseButtonReleased(MOUSE_RIGHT_BUTTON)) {
+        if (draggingMap && IsMouseButtonReleased(mapDragButton)) {
             draggingMap = false;
         }
 
-        Rectangle source = sourceRectForView(mapConfig, mapView);
-        std::vector<NodeView> views = layoutNodes(g, mapDest, source);
-        Node* hovered = nodeAtMouse(views);
+        source = sourceRectForView(mapConfig, mapView);
+        views = layoutNodes(g, mapDest, source);
+        hovered = nodeAtMouse(views);
         TextBox* activeGuideBox = nullptr;
         SetMouseCursor(draggingMap ? MOUSE_CURSOR_RESIZE_ALL
-                                   : hovered ? MOUSE_CURSOR_POINTING_HAND : MOUSE_CURSOR_DEFAULT);
+                                   : hovered ? MOUSE_CURSOR_POINTING_HAND
+                                             : mouseInMap ? MOUSE_CURSOR_RESIZE_ALL : MOUSE_CURSOR_DEFAULT);
 
         DrawRectangleRec(sidebar, Color{248, 250, 253, 255});
         DrawLine(360, 0, 360, ScreenHeight, Color{207, 216, 226, 255});

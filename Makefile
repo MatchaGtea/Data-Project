@@ -13,7 +13,22 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 SRC = $(wildcard src/*.cpp src/data_structures/*.cpp)
-OUT = build/program
+
+ifeq ($(OS),Windows_NT)
+	OUT = build/program.exe
+else
+	OUT = build/program
+endif
+
+ifeq ($(MSYSTEM),UCRT64)
+	MINGW_PACKAGE_PREFIX = mingw-w64-ucrt-x86_64
+else ifeq ($(MSYSTEM),MINGW64)
+	MINGW_PACKAGE_PREFIX = mingw-w64-x86_64
+else ifeq ($(MSYSTEM),CLANG64)
+	MINGW_PACKAGE_PREFIX = mingw-w64-clang-x86_64
+endif
+
+.PHONY: all clean run install-raylib
 
 all: $(OUT)
 
@@ -25,4 +40,10 @@ clean:
 	rm -f $(OUT)
 
 run: all
-	./$(OUT)
+	$(OUT)
+
+install-raylib:
+ifndef MINGW_PACKAGE_PREFIX
+	$(error Run this target from the MSYS2 UCRT64, MINGW64, or CLANG64 terminal)
+endif
+	pacman -S --needed base-devel $(MINGW_PACKAGE_PREFIX)-gcc $(MINGW_PACKAGE_PREFIX)-raylib $(MINGW_PACKAGE_PREFIX)-pkgconf
