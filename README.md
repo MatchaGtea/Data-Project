@@ -6,9 +6,9 @@
 
 ## Team Members
 
-| Name | GitHub Username |
-|------|----------------|
-| (ชื่อ) | (username) |
+| Name                 | GitHub Username |
+|----------------------|-----------------|
+| Pornnapat Poonpolsub | penguinnoiii    |
 | (ชื่อ) | (username) |
 | (ชื่อ) | (username) |
 
