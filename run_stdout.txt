@@ -1,0 +1,295 @@
+Added location: N1 - Welcome Center Building
+Added location: N2 - Office of the President Building
+Added location: N3 - Department of Chemistry Building
+Added location: N4 - Department of Physics-Mathematics Building
+Added location: N5 - Scientific Instrument Center Building
+Added location: N6 - Department of Microbiology Building
+Added location: N7 - Fundamental Science Laboratory Building
+Added location: N8 - Water Pump Station
+Added location: N9 - Institute of Field Robotics Building
+Added location: N10 - KMUTT Library Building
+Added location: N11 - School of Information Technology Building
+Added location: N12 - Utility Exchange Building
+Added location: N13 - Workshop and Greenhouse Building
+Added location: N14 - Hi-Voltage Building
+Added location: N15 - School of Liberal Arts Building
+Added location: N16 - Learning Exchange Building
+Added location: N17 - Classroom Building 2
+Added location: N18 - Production Engineering Laboratory Building 4
+Added location: N19 - Production Engineering Laboratory Building 5
+Added location: N20 - Classroom Building 1
+Added location: S1 - Car Parking Building
+Added location: S2 - Dhammaraksa Residence Hall 2
+Added location: S3 - Innovation Learning Institute Building
+Added location: S4 - Engineering Building
+Added location: S5 - Dhammaraksa Residence Hall 2 Annex
+Added location: S6 - Dhammaraksa Residence Hall 1
+Added location: S7 - KMUTT Child Development Building
+Added location: S8 - Materials Technology Research Building
+Added location: S9 - School of Energy Environment and Materials Building
+Added location: S10 - KMUTT Green Society Building
+Added location: S11 - Classroom Building 5
+Added location: S12 - Classroom Building 4
+Added location: S13 - Classroom Building 3
+Added location: S14 - King Mongkut 190th Anniversary Memorial Building
+Added location: S15 - Department of Chemical Engineering Building
+Added location: G1 - Gate 1 Pracha Uthit Road
+Added location: G2 - Gate 2
+Added location: G3 - Gate 3
+Added location: G4 - Gate 4
+Added location: FC1 - Food Center near S11
+Added location: FC2 - Food Center near N10
+Added location: HC1 - Health Care Unit
+Added location: BOOK - KMUTT Book Store
+Added location: USTORE - U Store Shop
+Added location: SEV1 - 7-Eleven near S15
+Added location: SEV2 - 7-Eleven near S6
+Added location: MON - King Mongkut Monument
+Added location: PARK - Commemoration Park
+Added location: HERO - Pavilion of Hero
+Added location: POST - Post Office
+Added location: COFFEE - Coffee Shop
+Added location: CP1 - Car Park West
+Added location: CP2 - Car Park S8
+Added location: CP3 - Car Park Engineering
+Added location: CP4 - Car Park N2
+Added location: CP5 - Car Park N11
+Added location: CP6 - Car Park N10
+Added location: CP7 - Car Park N9
+Added location: CP8 - Car Park Gate 3
+Added path: BOOK <-> G1 (distance: 107)
+Added path: BOOK <-> MON (distance: 89)
+Added path: BOOK <-> PARK (distance: 25)
+Added path: BOOK <-> S1 (distance: 65)
+Added path: BOOK <-> S2 (distance: 42)
+Added path: BOOK <-> USTORE (distance: 40)
+Added path: COFFEE <-> CP5 (distance: 70)
+Added path: COFFEE <-> CP6 (distance: 22)
+Added path: COFFEE <-> FC2 (distance: 15)
+Added path: COFFEE <-> N10 (distance: 22)
+Added path: COFFEE <-> N11 (distance: 54)
+Added path: COFFEE <-> N5 (distance: 31)
+Added path: COFFEE <-> N6 (distance: 54)
+Added path: CP1 <-> CP8 (distance: 15)
+Added path: CP1 <-> FC1 (distance: 69)
+Added path: CP1 <-> G2 (distance: 86)
+Added path: CP1 <-> G3 (distance: 42)
+Added path: CP1 <-> G4 (distance: 163)
+Added path: CP1 <-> S12 (distance: 32)
+Added path: CP1 <-> S13 (distance: 111)
+Added path: CP1 <-> S9 (distance: 75)
+Added path: CP2 <-> S10 (distance: 40)
+Added path: CP2 <-> S5 (distance: 58)
+Added path: CP2 <-> S6 (distance: 75)
+Added path: CP2 <-> S7 (distance: 29)
+Added path: CP2 <-> S8 (distance: 35)
+Added path: CP2 <-> S9 (distance: 64)
+Added path: CP2 <-> SEV2 (distance: 83)
+Added path: CP3 <-> S1 (distance: 74)
+Added path: CP3 <-> S3 (distance: 68)
+Added path: CP3 <-> S4 (distance: 36)
+Added path: CP3 <-> S5 (distance: 81)
+Added path: CP3 <-> SEV1 (distance: 102)
+Added path: CP4 <-> HC1 (distance: 76)
+Added path: CP4 <-> HERO (distance: 5)
+Added path: CP4 <-> N1 (distance: 42)
+Added path: CP4 <-> N16 (distance: 75)
+Added path: CP4 <-> N2 (distance: 21)
+Added path: CP4 <-> N3 (distance: 76)
+Added path: CP5 <-> FC2 (distance: 83)
+Added path: CP5 <-> N11 (distance: 17)
+Added path: CP5 <-> N12 (distance: 60)
+Added path: CP5 <-> N15 (distance: 62)
+Added path: CP5 <-> POST (distance: 118)
+Added path: CP6 <-> CP7 (distance: 127)
+Added path: CP6 <-> FC2 (distance: 7)
+Added path: CP6 <-> N10 (distance: 29)
+Added path: CP6 <-> N11 (distance: 73)
+Added path: CP6 <-> N4 (distance: 72)
+Added path: CP6 <-> N5 (distance: 12)
+Added path: CP6 <-> N6 (distance: 40)
+Added path: CP6 <-> N7 (distance: 93)
+Added path: CP6 <-> N8 (distance: 153)
+Added path: CP7 <-> N10 (distance: 107)
+Added path: CP7 <-> N6 (distance: 92)
+Added path: CP7 <-> N7 (distance: 123)
+Added path: CP7 <-> N8 (distance: 128)
+Added path: CP7 <-> N9 (distance: 42)
+Added path: CP8 <-> FC1 (distance: 61)
+Added path: CP8 <-> G2 (distance: 76)
+Added path: CP8 <-> G3 (distance: 37)
+Added path: CP8 <-> G4 (distance: 178)
+Added path: CP8 <-> S12 (distance: 40)
+Added path: CP8 <-> S13 (distance: 125)
+Added path: CP8 <-> S9 (distance: 60)
+Added path: FC1 <-> S10 (distance: 50)
+Added path: FC1 <-> S11 (distance: 32)
+Added path: FC1 <-> S12 (distance: 59)
+Added path: FC1 <-> S15 (distance: 82)
+Added path: FC1 <-> S4 (distance: 104)
+Added path: FC1 <-> S9 (distance: 65)
+Added path: FC1 <-> SEV1 (distance: 77)
+Added path: FC2 <-> N10 (distance: 25)
+Added path: FC2 <-> N11 (distance: 67)
+Added path: FC2 <-> N4 (distance: 75)
+Added path: FC2 <-> N5 (distance: 18)
+Added path: FC2 <-> N6 (distance: 44)
+Added path: FC2 <-> N7 (distance: 100)
+Added path: G1 <-> MON (distance: 61)
+Added path: G1 <-> N1 (distance: 180)
+Added path: G1 <-> PARK (distance: 101)
+Added path: G1 <-> S2 (distance: 131)
+Added path: G1 <-> USTORE (distance: 137)
+Added path: G2 <-> G3 (distance: 48)
+Added path: G2 <-> S8 (distance: 85)
+Added path: G2 <-> S9 (distance: 59)
+Added path: G3 <-> S12 (distance: 74)
+Added path: G3 <-> S9 (distance: 66)
+Added path: G4 <-> S12 (distance: 148)
+Added path: G4 <-> S13 (distance: 59)
+Added path: G4 <-> S14 (distance: 96)
+Added path: HC1 <-> HERO (distance: 78)
+Added path: HC1 <-> N1 (distance: 74)
+Added path: HC1 <-> N16 (distance: 65)
+Added path: HC1 <-> N17 (distance: 94)
+Added path: HC1 <-> N18 (distance: 52)
+Added path: HC1 <-> N19 (distance: 91)
+Added path: HERO <-> N1 (distance: 47)
+Added path: HERO <-> N16 (distance: 72)
+Added path: HERO <-> N2 (distance: 22)
+Added path: HERO <-> N3 (distance: 72)
+Added path: HERO <-> N4 (distance: 75)
+Added path: MON <-> N1 (distance: 125)
+Added path: MON <-> N2 (distance: 125)
+Added path: MON <-> PARK (distance: 69)
+Added path: N1 <-> N2 (distance: 47)
+Added path: N1 <-> PARK (distance: 92)
+Added path: N10 <-> N11 (distance: 71)
+Added path: N10 <-> N5 (distance: 42)
+Added path: N10 <-> N6 (distance: 39)
+Added path: N10 <-> N9 (distance: 148)
+Added path: N10 <-> POST (distance: 145)
+Added path: N11 <-> N12 (distance: 77)
+Added path: N11 <-> N9 (distance: 211)
+Added path: N11 <-> POST (distance: 128)
+Added path: N12 <-> N13 (distance: 38)
+Added path: N12 <-> N14 (distance: 74)
+Added path: N12 <-> N15 (distance: 26)
+Added path: N12 <-> N17 (distance: 83)
+Added path: N12 <-> POST (distance: 123)
+Added path: N13 <-> N14 (distance: 39)
+Added path: N13 <-> N15 (distance: 47)
+Added path: N13 <-> N17 (distance: 97)
+Added path: N13 <-> N20 (distance: 89)
+Added path: N13 <-> POST (distance: 144)
+Added path: N14 <-> N15 (distance: 72)
+Added path: N14 <-> N17 (distance: 105)
+Added path: N14 <-> N20 (distance: 64)
+Added path: N14 <-> S14 (distance: 140)
+Added path: N15 <-> N16 (distance: 100)
+Added path: N15 <-> N17 (distance: 58)
+Added path: N16 <-> N17 (distance: 43)
+Added path: N16 <-> N18 (distance: 65)
+Added path: N17 <-> N18 (distance: 66)
+Added path: N17 <-> N20 (distance: 81)
+Added path: N18 <-> N19 (distance: 45)
+Added path: N18 <-> N20 (distance: 67)
+Added path: N19 <-> N20 (distance: 44)
+Added path: N19 <-> S15 (distance: 68)
+Added path: N19 <-> SEV1 (distance: 80)
+Added path: N2 <-> N3 (distance: 64)
+Added path: N2 <-> N4 (distance: 82)
+Added path: N20 <-> S14 (distance: 150)
+Added path: N20 <-> S15 (distance: 106)
+Added path: N3 <-> N4 (distance: 52)
+Added path: N3 <-> N5 (distance: 92)
+Added path: N4 <-> N5 (distance: 61)
+Added path: N5 <-> N6 (distance: 47)
+Added path: N5 <-> N7 (distance: 91)
+Added path: N6 <-> N7 (distance: 68)
+Added path: N6 <-> N8 (distance: 119)
+Added path: N6 <-> N9 (distance: 133)
+Added path: N7 <-> N8 (distance: 65)
+Added path: N7 <-> N9 (distance: 157)
+Added path: N8 <-> N9 (distance: 149)
+Added path: PARK <-> S1 (distance: 75)
+Added path: PARK <-> S2 (distance: 66)
+Added path: PARK <-> USTORE (distance: 64)
+Added path: S1 <-> S2 (distance: 64)
+Added path: S1 <-> S3 (distance: 54)
+Added path: S1 <-> S4 (distance: 110)
+Added path: S1 <-> USTORE (distance: 54)
+Added path: S10 <-> S11 (distance: 34)
+Added path: S10 <-> S4 (distance: 73)
+Added path: S10 <-> S8 (distance: 60)
+Added path: S10 <-> S9 (distance: 56)
+Added path: S11 <-> S12 (distance: 90)
+Added path: S11 <-> S15 (distance: 71)
+Added path: S11 <-> S4 (distance: 72)
+Added path: S11 <-> SEV1 (distance: 59)
+Added path: S12 <-> S13 (distance: 91)
+Added path: S12 <-> S14 (distance: 165)
+Added path: S13 <-> S14 (distance: 94)
+Added path: S15 <-> S4 (distance: 97)
+Added path: S15 <-> SEV1 (distance: 20)
+Added path: S2 <-> S3 (distance: 74)
+Added path: S2 <-> USTORE (distance: 10)
+Added path: S3 <-> S5 (distance: 83)
+Added path: S3 <-> USTORE (distance: 67)
+Added path: S4 <-> S5 (distance: 72)
+Added path: S4 <-> SEV1 (distance: 78)
+Added path: S5 <-> S6 (distance: 48)
+Added path: S5 <-> S7 (distance: 43)
+Added path: S5 <-> SEV2 (distance: 60)
+Added path: S6 <-> S7 (distance: 47)
+Added path: S6 <-> S8 (distance: 83)
+Added path: S6 <-> SEV2 (distance: 12)
+Added path: S7 <-> S8 (distance: 43)
+Added path: S7 <-> SEV2 (distance: 55)
+Added path: S8 <-> S9 (distance: 48)
+Added path: S8 <-> SEV2 (distance: 86)
+INFO: Initializing raylib 6.0
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully 
+INFO:     > Display size: 1920 x 1080
+INFO:     > Screen size:  1120 x 720
+INFO:     > Render size:  1120 x 720
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 403
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
+INFO:     > Version:  3.3.0 NVIDIA 596.36
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - Win32): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: C:\Users\asus\Documents\GitHub\Data-Project\build
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+WARNING: FILEIO: [/System/Library/Fonts/Supplemental/Trebuchet MS.ttf] Failed to open file
+Map image path: C:/Users/asus/Documents/GitHub/Data-Project/build/assets/Masterplan  KMUTT-rgb.png
+INFO: FILEIO: [C:/Users/asus/Documents/GitHub/Data-Project/build/assets/Masterplan  KMUTT-rgb.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (4929x3374 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 3] Texture loaded successfully (4929x3374 | R8G8B8A8 | 1 mipmaps)

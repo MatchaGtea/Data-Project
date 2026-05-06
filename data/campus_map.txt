@@ -1,5 +1,5 @@
 [MapImage]
-image=assets/Masterplan  KMUTT.png
+image=assets/Masterplan  KMUTT-rgb.png
 width=4929
 height=3374
 crop_x=1400

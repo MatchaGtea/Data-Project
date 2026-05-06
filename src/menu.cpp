@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cctype>
 #include <cstring>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <limits>
@@ -62,6 +63,56 @@ struct PathResult {
     std::vector<int> nodeIds;
     int distance;
 };
+
+std::string normalizePath(std::string path) {
+    std::replace(path.begin(), path.end(), '\\', '/');
+    return path;
+}
+
+std::string joinPath(const std::string& dir, const std::string& file) {
+    if (dir.empty()) return file;
+    char last = dir[dir.size() - 1];
+    if (last == '/' || last == '\\') return dir + file;
+    return dir + "/" + file;
+}
+
+bool fileExists(const std::string& path) {
+    std::ifstream file(path, std::ios::binary);
+    return file.good();
+}
+
+std::string absolutePath(const std::string& path) {
+    try {
+        return normalizePath(std::filesystem::absolute(path).string());
+    } catch (...) {
+        return normalizePath(path);
+    }
+}
+
+std::string resolveProjectFile(const std::string& relativePath) {
+    std::string normalized = normalizePath(relativePath);
+    std::vector<std::string> candidates = {
+        normalized,
+        "../" + normalized,
+        "../../" + normalized,
+        joinPath(absolutePath("."), normalized),
+        joinPath(absolutePath(".."), normalized),
+        joinPath(absolutePath("../.."), normalized)
+    };
+
+    const char* appDir = GetApplicationDirectory();
+    if (appDir && appDir[0]) {
+        std::string base = normalizePath(appDir);
+        candidates.push_back(joinPath(base, normalized));
+        candidates.push_back(joinPath(base, "../" + normalized));
+        candidates.push_back(joinPath(base, "../../" + normalized));
+    }
+
+    for (const std::string& candidate : candidates) {
+        if (fileExists(candidate)) return absolutePath(candidate);
+    }
+    return normalized;
+}
 
 Font loadAppFont() {
     Font font = LoadFontEx("/System/Library/Fonts/Supplemental/Trebuchet MS.ttf", 36, nullptr, 0);
@@ -276,7 +327,8 @@ void rebuildHash(Graph* g, HashTable* ht) {
 
 MapImageConfig loadMapImageConfig(const char* filename) {
     MapImageConfig config;
-    std::ifstream file(filename);
+    std::string resolvedFilename = resolveProjectFile(filename);
+    std::ifstream file(resolvedFilename);
     if (!file) return config;
 
     bool inMapSection = false;
@@ -299,7 +351,7 @@ MapImageConfig loadMapImageConfig(const char* filename) {
         std::string key = line.substr(0, sep);
         std::string value = line.substr(sep + 1);
         try {
-            if (key == "image") config.imagePath = value;
+            if (key == "image") config.imagePath = resolveProjectFile(value);
             if (key == "width") config.width = std::stoi(value);
             if (key == "height") config.height = std::stoi(value);
             if (key == "crop_x") config.cropX = std::stoi(value);
@@ -629,12 +681,15 @@ void showMenu(Graph* g, HashTable* ht) {
     MapImageConfig mapConfig = loadMapImageConfig("data/campus_map.txt");
     Texture2D mapTexture{};
     bool mapLoaded = false;
-    if (FileExists(mapConfig.imagePath.c_str())) {
-        mapTexture = LoadTexture(mapConfig.imagePath.c_str());
-        mapLoaded = mapTexture.id != 0;
-        if (mapLoaded) {
-            SetTextureFilter(mapTexture, TEXTURE_FILTER_BILINEAR);
-        }
+    std::cout << "Map image path: " << mapConfig.imagePath << "\n";
+    mapTexture = LoadTexture(mapConfig.imagePath.c_str());
+    mapLoaded = mapTexture.id != 0;
+    if (mapLoaded) {
+        mapConfig.width = mapTexture.width;
+        mapConfig.height = mapTexture.height;
+        SetTextureFilter(mapTexture, TEXTURE_FILTER_BILINEAR);
+    } else {
+        std::cout << "Map image failed to load.\n";
     }
 
     TextBox location{{28, 526, 292, 42}, "", false};
