@@ -42,7 +42,7 @@ struct NodeView {
 };
 
 struct MapImageConfig {
-    std::string imagePath = "assets/Masterplan  KMUTT.jpg";
+    std::string imagePath = "assets/Masterplan  KMUTT-rgb.png";
     int width = 4929;
     int height = 3374;
     int cropX = 1400;
