@@ -774,7 +774,6 @@ void showMenu(Graph* g, HashTable* ht) {
 
         drawText(font, "Smart Campus", 28, 28, 31, Color{22, 31, 44, 255});
         drawText(font, "Navigation", 28, 64, 31, Color{22, 31, 44, 255});
-        drawText(font, "Raylib GUI", 30, 108, 17, Color{92, 100, 112, 255});
 
         DrawRectangleRounded({28, 146, 292, 218}, 0.06f, 6, Color{255, 255, 255, 255});
         DrawRectangleRoundedLines({28, 146, 292, 218}, 0.06f, 6, Color{207, 216, 226, 255});
@@ -969,7 +968,6 @@ void showMenu(Graph* g, HashTable* ht) {
                   highlightPath, searchedNodeId, hovered);
         drawStatus(font, status, {390, 600, 700, 88});
 
-        drawText(font, "Commit: 5e914ce", 28, 654, 15, Color{92, 100, 112, 255});
         drawText(font, "Esc or window close exits.", 28, 676, 15, Color{92, 100, 112, 255});
         EndDrawing();
     }
