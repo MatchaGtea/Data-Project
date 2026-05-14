@@ -10,8 +10,8 @@
 | Name                 | GitHub Username |
 |----------------------|-----------------|
 | Pornnapat Poonpolsub | penguinnoiii    |
-| (ชื่อ) | (username) |
-| (ชื่อ) | (username) |
+| Pannatorn Techapathamanon | MatchaGtea |
+| Teerawit Ekwonganan | Atom7792 |
 
 ## Project Description
 
